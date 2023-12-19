@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Message</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: pink;
+      text-align: center;
+      padding: 50px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      animation: beat 1s infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 150px;
+      background-color: red;
+      border-radius: 100px 100px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart:after {
+      left: -50px;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      10% { transform: scale(0.91); }
+      20%, 30% { transform: scale(0.98); }
+      40%, 50% { transform: scale(0.87); }
+      60%, 70%, 80% { transform: scale(0.95); }
+      90% { transform: scale(0.93); }
+    }
+
+    .message {
+      font-size: 24px;
+      margin-top: 200px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .button:hover { background-color: #3e8e41 }
+
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    .telegram-link {
+      margin-top: 20px;
+      font-size: 18px;
+      display: none;
+    }
+
+  </style>
+
+</head>
+<body>
+<div class="heart"></div>
+<div class="message">Hey Love, You mean the world to me! 💖</div>
+<img src="cat.png" alt="Cute Cat" width="300px">
+<button class="button" onclick="showTelegramLink()">Click Me</button>
+<div class="telegram-link" id="telegramLink">My Telegram: <a href="https://t.me/js_rav">@js_rav</a></div>
+
+<script>
+  function showTelegramLink() {
+    document.getElementById("telegramLink").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
